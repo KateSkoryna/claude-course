@@ -1,0 +1,17 @@
+[
+  {
+    "task": "Create a JSON configuration object for an AWS Lambda function that processes S3 events, with a timeout of 60 seconds, 512MB of memory, and a VPC configuration with two subnets",
+    "format": "json",
+    "solution_criteria": "JSON object must include: Timeout (60), MemorySize (512), VpcConfig with SubnetIds array containing 2 subnet IDs, and proper event source mapping for S3 triggers"
+  },
+  {
+    "task": "Write a Python function that parses an AWS CloudWatch Logs Insight query result and extracts all fields that contain 'error' (case-insensitive) from the records, returning a list of unique field names",
+    "format": "python",
+    "solution_criteria": "Function should accept a list of record dictionaries, iterate through all fields in all records, identify fields containing 'error' case-insensitively, and return a deduplicated list of matching field names"
+  },
+  {
+    "task": "Create a regular expression pattern that matches valid AWS S3 bucket names according to AWS naming rules (lowercase letters, numbers, hyphens, 3-63 characters, cannot start or end with hyphen, cannot be formatted as IP address)",
+    "format": "regex",
+    "solution_criteria": "Regex must accept valid bucket names like 'my-bucket-123' and 'data2023', and reject invalid names like 'My-Bucket', 'bucket-', '-bucket', names under 3 characters, and IP-like patterns such as '192.168.1.1'"
+  }
+]
