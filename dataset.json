@@ -1,17 +1,38 @@
 [
   {
-    "task": "Create a JSON configuration object for an AWS Lambda function that processes S3 events, with a timeout of 60 seconds, 512MB of memory, and a VPC configuration with two subnets",
-    "format": "json",
-    "solution_criteria": "JSON object must include: Timeout (60), MemorySize (512), VpcConfig with SubnetIds array containing 2 subnet IDs, and proper event source mapping for S3 triggers"
+    "prompt_inputs": {
+      "content": "Recent advances in synthetic biology have demonstrated the potential of CRISPR-Cas9 gene editing to treat genetic disorders, with successful clinical trials showing 78% efficacy in correcting mutations responsible for sickle cell disease. However, the widespread application of germline editing raises significant ethical concerns regarding consent, equity of access, and unintended off-target genetic modifications that could affect non-coding regions. Chemically, the mechanism relies on guide RNA specificity and PAM sequence recognition, where mismatches in the 20-nucleotide target sequence can result in off-target cleavage at homologous sites. Furthermore, regulatory frameworks across different nations remain inconsistent, creating challenges for international collaboration and establishing universal standards for responsible research conduct in human genome modification."
+    },
+    "solution_criteria": [
+      "Extracts all distinct subject areas: molecular biology/genetics, chemistry/biochemistry, and ethics/policy",
+      "Returns topics as a JSON array of strings",
+      "Avoids duplicates and maintains clarity between interdisciplinary domains"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from the scholary article into a JSON array of strings\n    ",
+    "scenario": "Testing with an interdisciplinary passage containing mixed topics (biology, chemistry, and ethics) to verify the prompt can accurately distinguish and extract multiple diverse subject areas"
   },
   {
-    "task": "Write a Python function that parses an AWS CloudWatch Logs Insight query result and extracts all fields that contain 'error' (case-insensitive) from the records, returning a list of unique field names",
-    "format": "python",
-    "solution_criteria": "Function should accept a list of record dictionaries, iterate through all fields in all records, identify fields containing 'error' case-insensitively, and return a deduplicated list of matching field names"
+    "prompt_inputs": {
+      "content": "Recent advances in machine learning have revolutionized natural language processing, enabling systems to understand context and nuance in human communication. The development of transformer architectures, particularly attention mechanisms, has improved performance across translation tasks, sentiment analysis, and question-answering systems. However, these neural models require substantial computational resources and large labeled datasets, raising concerns about environmental sustainability and the reproducibility of results in resource-constrained settings. Furthermore, the black-box nature of deep learning creates challenges for interpretability in critical applications such as medical diagnosis and legal decision-making, where explainability is essential for accountability and user trust."
+    },
+    "solution_criteria": [
+      "Extracts both explicitly stated topics (machine learning, transformer architectures, attention mechanisms, translation, sentiment analysis, question-answering) and implicitly inferred topics (computational efficiency, environmental impact, model interpretability, accountability)",
+      "Returns output as a valid JSON array of strings",
+      "Includes at least 8 distinct topics"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from the scholary article into a JSON array of strings\n    ",
+    "scenario": "Testing with a passage containing implicit and explicit topics, where some topics are directly stated while others must be inferred from context, to evaluate extraction completeness"
   },
   {
-    "task": "Create a regular expression pattern that matches valid AWS S3 bucket names according to AWS naming rules (lowercase letters, numbers, hyphens, 3-63 characters, cannot start or end with hyphen, cannot be formatted as IP address)",
-    "format": "regex",
-    "solution_criteria": "Regex must accept valid bucket names like 'my-bucket-123' and 'data2023', and reject invalid names like 'My-Bucket', 'bucket-', '-bucket', names under 3 characters, and IP-like patterns such as '192.168.1.1'"
+    "prompt_inputs": {
+      "content": "Recent advances in machine learning have revolutionized natural language processing through the development of transformer-based architectures, which utilize multi-head attention mechanisms to capture contextual relationships in sequential data. These neural network models, particularly large language models trained via supervised fine-tuning and reinforcement learning from human feedback, have demonstrated remarkable performance on downstream tasks including sentiment analysis, named entity recognition, and machine translation. The computational efficiency of these systems has been further improved through techniques such as knowledge distillation, quantization, and parameter pruning, enabling deployment on resource-constrained devices. Additionally, interpretability research has emerged as a critical subfield, investigating attention visualization, feature attribution methods, and mechanistic interpretability to understand how transformer models encode linguistic knowledge and make predictions."
+    },
+    "solution_criteria": [
+      "Extracts primary topics without including redundant nested concepts (e.g., 'transformer architectures' rather than both 'transformer architectures' and 'multi-head attention mechanisms' as separate topics)",
+      "Captures distinct subject areas mentioned in the passage (e.g., model architectures, training methods, optimization techniques, interpretability)",
+      "Returns results as a valid JSON array of strings"
+    ],
+    "task_description": "\n    Extract topics out of a passage of text from the scholary article into a JSON array of strings\n    ",
+    "scenario": "Testing with a dense academic passage containing overlapping topics, jargon, and subtopics to assess whether the prompt extracts only primary topics or includes redundant/nested concepts"
   }
 ]
