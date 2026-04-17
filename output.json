@@ -1,0 +1,53 @@
+[
+  {
+    "output": "```json\n[\n  \"synthetic biology\",\n  \"CRISPR-Cas9 gene editing\",\n  \"genetic disorders\",\n  \"clinical trials\",\n  \"sickle cell disease\",\n  \"germline editing\",\n  \"ethical concerns\",\n  \"consent\",\n  \"equity of access\",\n  \"off-target genetic modifications\",\n  \"non-coding regions\",\n  \"guide RNA specificity\",\n  \"PAM sequence recognition\",\n  \"nucleotide target sequence\",\n  \"off-target cleavage\",\n  \"homologous sites\",\n  \"regulatory frameworks\",\n  \"international collaboration\",\n  \"human genome modification\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "Recent advances in synthetic biology have demonstrated the potential of CRISPR-Cas9 gene editing to treat genetic disorders, with successful clinical trials showing 78% efficacy in correcting mutations responsible for sickle cell disease. However, the widespread application of germline editing raises significant ethical concerns regarding consent, equity of access, and unintended off-target genetic modifications that could affect non-coding regions. Chemically, the mechanism relies on guide RNA specificity and PAM sequence recognition, where mismatches in the 20-nucleotide target sequence can result in off-target cleavage at homologous sites. Furthermore, regulatory frameworks across different nations remain inconsistent, creating challenges for international collaboration and establishing universal standards for responsible research conduct in human genome modification."
+      },
+      "solution_criteria": [
+        "Extracts all distinct subject areas: molecular biology/genetics, chemistry/biochemistry, and ethics/policy",
+        "Returns topics as a JSON array of strings",
+        "Avoids duplicates and maintains clarity between interdisciplinary domains"
+      ],
+      "task_description": "\n    Extract topics out of a passage of text from the scholary article into a JSON array of strings\n    ",
+      "scenario": "Testing with an interdisciplinary passage containing mixed topics (biology, chemistry, and ethics) to verify the prompt can accurately distinguish and extract multiple diverse subject areas"
+    },
+    "score": 9,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it contains a valid JSON array of strings, each entry is a topic without extra commentary, and the response contains only the JSON array. It also meets the secondary criteria by extracting topics across all three required domains (molecular biology/genetics like 'CRISPR-Cas9 gene editing' and 'sickle cell disease'; chemistry/biochemistry like 'guide RNA specificity' and 'PAM sequence recognition'; ethics/policy like 'ethical concerns' and 'regulatory frameworks'). The extraction is thorough and avoids duplicates. While some topics could arguably be consolidated for better clarity, the current granularity still maintains domain distinction and represents legitimate distinct topics from the passage. The solution demonstrates strong comprehension of the source material."
+  },
+  {
+    "output": "```json\n[\n  \"machine learning\",\n  \"natural language processing\",\n  \"transformer architectures\",\n  \"attention mechanisms\",\n  \"translation tasks\",\n  \"sentiment analysis\",\n  \"question-answering systems\",\n  \"computational resources\",\n  \"labeled datasets\",\n  \"environmental sustainability\",\n  \"reproducibility\",\n  \"deep learning\",\n  \"interpretability\",\n  \"medical diagnosis\",\n  \"legal decision-making\",\n  \"explainability\",\n  \"accountability\",\n  \"user trust\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "Recent advances in machine learning have revolutionized natural language processing, enabling systems to understand context and nuance in human communication. The development of transformer architectures, particularly attention mechanisms, has improved performance across translation tasks, sentiment analysis, and question-answering systems. However, these neural models require substantial computational resources and large labeled datasets, raising concerns about environmental sustainability and the reproducibility of results in resource-constrained settings. Furthermore, the black-box nature of deep learning creates challenges for interpretability in critical applications such as medical diagnosis and legal decision-making, where explainability is essential for accountability and user trust."
+      },
+      "solution_criteria": [
+        "Extracts both explicitly stated topics (machine learning, transformer architectures, attention mechanisms, translation, sentiment analysis, question-answering) and implicitly inferred topics (computational efficiency, environmental impact, model interpretability, accountability)",
+        "Returns output as a valid JSON array of strings",
+        "Includes at least 8 distinct topics"
+      ],
+      "task_description": "\n    Extract topics out of a passage of text from the scholary article into a JSON array of strings\n    ",
+      "scenario": "Testing with a passage containing implicit and explicit topics, where some topics are directly stated while others must be inferred from context, to evaluate extraction completeness"
+    },
+    "score": 9,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it is a valid JSON array containing only strings with topics, no extra commentary, and returns only the JSON array. It meets all secondary criteria by extracting explicitly stated topics (machine learning, NLP, transformers, attention mechanisms, translation, sentiment analysis, question-answering) and implicitly inferred topics (computational resources, environmental sustainability, reproducibility, interpretability, explainability). The 18 topics extracted significantly exceed the minimum of 8 required. While a few extractions are somewhat tangential to core topics, they are still reasonably defensible as topics mentioned in the passage. The solution demonstrates strong understanding of the task."
+  },
+  {
+    "output": "```json\n[\n  \"machine learning\",\n  \"natural language processing\",\n  \"transformer architectures\",\n  \"multi-head attention mechanisms\",\n  \"neural networks\",\n  \"large language models\",\n  \"supervised fine-tuning\",\n  \"reinforcement learning from human feedback\",\n  \"sentiment analysis\",\n  \"named entity recognition\",\n  \"machine translation\",\n  \"knowledge distillation\",\n  \"quantization\",\n  \"parameter pruning\",\n  \"attention visualization\",\n  \"feature attribution methods\",\n  \"mechanistic interpretability\",\n  \"interpretability research\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "Recent advances in machine learning have revolutionized natural language processing through the development of transformer-based architectures, which utilize multi-head attention mechanisms to capture contextual relationships in sequential data. These neural network models, particularly large language models trained via supervised fine-tuning and reinforcement learning from human feedback, have demonstrated remarkable performance on downstream tasks including sentiment analysis, named entity recognition, and machine translation. The computational efficiency of these systems has been further improved through techniques such as knowledge distillation, quantization, and parameter pruning, enabling deployment on resource-constrained devices. Additionally, interpretability research has emerged as a critical subfield, investigating attention visualization, feature attribution methods, and mechanistic interpretability to understand how transformer models encode linguistic knowledge and make predictions."
+      },
+      "solution_criteria": [
+        "Extracts primary topics without including redundant nested concepts (e.g., 'transformer architectures' rather than both 'transformer architectures' and 'multi-head attention mechanisms' as separate topics)",
+        "Captures distinct subject areas mentioned in the passage (e.g., model architectures, training methods, optimization techniques, interpretability)",
+        "Returns results as a valid JSON array of strings"
+      ],
+      "task_description": "\n    Extract topics out of a passage of text from the scholary article into a JSON array of strings\n    ",
+      "scenario": "Testing with a dense academic passage containing overlapping topics, jargon, and subtopics to assess whether the prompt extracts only primary topics or includes redundant/nested concepts"
+    },
+    "score": 6,
+    "reasoning": "The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the article with no extra commentary. However, it has notable deficiencies against the primary secondary criterion about avoiding redundant nested concepts. The inclusion of both 'transformer architectures' and 'multi-head attention mechanisms' as separate topics, along with 'reinforcement learning from human feedback' alongside broader training concepts, represents over-granularity that the criteria explicitly cautions against. The solution captures distinct subject areas well but errs on the side of comprehensiveness rather than strategic topic selection."
+  }
+]
